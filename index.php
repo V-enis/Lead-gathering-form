@@ -9,7 +9,7 @@
 </head>
 <body>
   <div class="form-holder">
-    <form action="script.php" method="post">
+    <form action="database.php" method="post">
 
       <div class="title">
         <h1>Lead Gathering Form</h1>
@@ -39,27 +39,5 @@
 
 <?php
 
-    echo '<script type="text/javascript">
-       window.onload = function () { alert("Form submission successful"); } 
-</script>'; 
 
-
-
-
-
-  $name = trim(filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS));
-  $email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
-  $message = trim(filter_input(INPUT_POST, "message", FILTER_SANITIZE_SPECIAL_CHARS));
-
-  // Validate email format
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      die("Invalid email format.");
-  }
-
-  $error = false;
-
-  if (empty($name) || empty($email) || empty($message)) {
-    $error = true;
-  }
-  echo "{$name}, {$email}, {$message}, {$error}";
-  
+ 
